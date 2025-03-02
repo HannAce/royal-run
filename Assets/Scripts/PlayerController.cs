@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody m_rb;
     private Vector3 m_movementInput;
 
+    private const float ClampedX = 4f;
+    private const float MinClampedZ = -1.5f;
+    private const float MaxClampedZ = 3f;
+
     private void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
@@ -29,8 +33,8 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = new Vector3(m_movementInput.x, 0, m_movementInput.y);
         Vector3 newPos = currentPos + moveDirection * (m_moveSpeed * Time.fixedDeltaTime);
         
-        float clampedX = Mathf.Clamp(newPos.x, -4f, 4f);
-        float clampedZ = Mathf.Clamp(newPos.z, -1.5f, 3f);
+        float clampedX = Mathf.Clamp(newPos.x, -ClampedX, ClampedX);
+        float clampedZ = Mathf.Clamp(newPos.z, MinClampedZ, MaxClampedZ);
         Vector3 clampedPos = new Vector3(clampedX, newPos.y, clampedZ);
         
         m_rb.MovePosition(clampedPos);
@@ -38,5 +42,6 @@ public class PlayerController : MonoBehaviour
 
     private void ClampMovement()
     {
+        
     }
 }
