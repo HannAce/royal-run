@@ -695,8 +695,12 @@ MonoBehaviour:
   m_obstaclePrefabs:
   - {fileID: 130934145109955503, guid: c6ff7d36fe32fcd43a496b40ce512795, type: 3}
   - {fileID: 1767504983214106303, guid: 050ac549019a3764990325810a6152c2, type: 3}
-  m_obstacleSpawnInterval: 1
+  - {fileID: 4637915589620980628, guid: 2693274b3d4ce2c4c8fba44705982747, type: 3}
+  - {fileID: 546881700207309958, guid: c94898fa4e96b14439f288200c12fde0, type: 3}
+  - {fileID: 503563560584154872, guid: 1a47eb54a47f1ff438d0c4883504001d, type: 3}
+  m_obstacleSpawnInterval: 2
   m_obstacleParent: {fileID: 276006011}
+  m_spawnWidth: 4
 --- !u!4 &999556482
 Transform:
   m_ObjectHideFlags: 0
